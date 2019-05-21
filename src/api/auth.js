@@ -1,11 +1,11 @@
-import req from '../../helpers/axios'
+import req from '@/helpers/axios'
 const URL={
     register:'/auth/register',
     login:'/auth/login',
     logout:'/auth/logout',
-    get_info:'/auth'
+    GET_INFO:'/auth'
 }
-export default{
+export default {
     register({username,password}){
         return req(URL.register,'post',{username,password})
     },
@@ -13,10 +13,9 @@ export default{
         return req(URL.login,'post',{username,password})
     },
     logout(){
-        return req(url.logout)
+        return req(URL.logout)
     },
-    loginfo(){
-        return req(url.get_info)
-    }
-    
-}
+    getInfo() {
+        return request(URL.GET_INFO)
+      }
+} 

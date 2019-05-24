@@ -68,7 +68,7 @@ export default {
     
      }
         if(command==='my'){
-        this.$router.push({path: '/my'})
+        this.$router.push({path: '/user'})
      }
      
        if(command==='geren'){

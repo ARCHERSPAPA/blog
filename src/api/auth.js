@@ -16,6 +16,6 @@ export default {
         return req(URL.logout)
     },
     getInfo() {
-        return request(URL.GET_INFO)
+        return req(URL.GET_INFO)
       }
 } 

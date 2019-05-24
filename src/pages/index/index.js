@@ -1,40 +1,35 @@
-import request from '../../helpers/axios'
+import blog from '@/api/blog.js'
 
-window.request=request
+
 export default {
-  // methods: {
-  //   open() {
-  //     const h = this.$createElement;
-  //     this.$msgbox({
-  //       title: '消息',
-  //       message: h('p', null, [
-  //         h('span', null, '内容可以是 '),
-  //         h('i', { style: 'color: teal' }, 'VNode')
-  //       ]),
-  //       showCancelButton: true,
-  //       confirmButtonText: '确定',
-  //       cancelButtonText: '取消',
-  //       beforeClose: (action, instance, done) => {
-  //         if (action === 'confirm') {
-  //           instance.confirmButtonLoading = true;
-  //           instance.confirmButtonText = '执行中...';
-  //           setTimeout(() => {
-  //             done();
-  //             setTimeout(() => {
-  //               instance.confirmButtonLoading = false;
-  //             }, 300);
-  //           }, 3000);
-  //         } else {
-  //           done();
-  //         }
-  //       }
-  //     }).then(action => {
-  //       this.$message({
-  //         type: 'info',
-  //         message: 'action: ' + action
-  //       });
-  //     });
-  //   }
-  // }
+  data () {
+    return {
+      blogs: [],
+      total: 0,
+      page: 1
+    }
+  },
 
+  created() {
+    this.page = parseInt(this.$route.query.page) || 1
+    blog.getIndexBlogs({ page: this.page }).then(res => {
+      console.log(res)
+      this.blogs = res.data
+      this.total = res.total
+      this.page = res.page
+    })
+  },
+
+  methods: {
+    onPageChange(newPage) {
+      console.log(newPage)
+      blog.getIndexBlogs({ page: newPage }).then(res => {
+        console.log(res)
+        this.blogs = res.data
+        this.total = res.total
+        this.page = res.page
+        this.$router.push({ path: '/', query: { page: newPage}})
+      })
+    }
+  }
 }

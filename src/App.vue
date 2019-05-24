@@ -53,9 +53,10 @@ Header{
   grid-area: header;
  
   padding-right: 10%;
-  background: url(http://img.soogif.com/WLHTIW6yr8XOHtxAzHZIjhKVkXu8TBp4.gif);
+  background: url(https://i.loli.net/2019/05/22/5ce52b3dace5e92162.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 10px;
   padding:20px;
   padding-left: 10%;
 }

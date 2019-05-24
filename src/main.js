@@ -6,6 +6,8 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import store from './pages/store/index'
+import friendly from './helpers/unlit'
+Vue.use(friendly)
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
@@ -16,5 +18,6 @@ new Vue({
   components: { App },
   template: '<App/>',
   store,
+ 
 })
 

@@ -2,8 +2,11 @@
   <header :class="{login: isLogin, 'no-login': !isLogin}">
   <template v-if="isLogin">
 <div class="head">
-    <h2>这里是 <sub>夏风</sub> <sub >休闲blog</sub></h2>
-    <div class="user" style="margin-right:6%">
+    <router-link to="/" ><h2>这里是 <sub>夏风</sub> <sub >休闲blog</sub></h2></router-link> 
+    <div class="ctr-h">
+      <router-link to="/create"><img src="../assets/create.png" alt="" class="bt-h"></router-link> 
+    </div>
+    <div class="user" style="margin-right:6%">   
        <el-dropdown @command="handleCommand" >
   <span class="el-dropdown-link">
     <a href=""><img :src="user.avatar" :alt="user.username" :title="user.username"></a><i class="el-icon-arrow-down el-icon--right"></i>
@@ -83,8 +86,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style  scoped>
+.head a{
+  color: rgba(63, 57, 57, 0.8);
+  text-decoration: none
+}
+.bt-h:hover{
+  box-shadow: 4px 4px 3px 4px rgba(1,1,1,0.6)
+}
 .login{
-  background: url(http://img.soogif.com/j0IQe01cGKokSUiT430bLRxUjhJVqQvg.gif);
+
    
   background-size: cover;
 }
@@ -104,9 +114,7 @@ li {
   
   margin: 0 10px;
 }
-a {
-  color: #42b983;
-};
+
 el-button{
 padding-left: 70%
 }
@@ -116,15 +124,22 @@ padding-left: 70%
 top:10px
 }
 .user img{
+  display: block;
   width: 70px
+}
+.ctr-h img{
+  width: 50px;
+  float: right;
+  margin-right: 12%;
+  margin-top:-40px
 }
 .user span{
   display: inline-block;
 
-  border-radius: 45%;
+  border-radius: 47%;
   overflow: hidden;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
 }
 
 </style>

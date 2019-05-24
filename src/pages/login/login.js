@@ -13,6 +13,7 @@ export default {
     onlogin() {
       this.login({username: this.username, password: this.password})
         .then(()=>{
+          console.log(this)
           this.$router.push({path: '/'})
         })
     }

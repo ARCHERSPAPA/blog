@@ -12,11 +12,11 @@
   
     </div>-->
 
-    <div class="content" v-for="blog in blogs">
-      <figure class="user">
+    <div class="content" v-for="blog in blogs" :key="blog.id">
+      <figure class="user" id='nihao'>
         <img :src="blog.user.avatar" alt>
         <p>
-          <a href>{{blog.user.username}}</a>
+          <a href title="用户名">{{blog.user.username}}</a>
         </p>
       </figure>
       <router-link :to="`/detail/${blog.id}`">
@@ -29,7 +29,7 @@
         </div>
       </router-link>
     </div>
-    <router-view/>
+    <!-- <router-view/> -->
     <el-pagination
       background
       layout="prev, pager, next"

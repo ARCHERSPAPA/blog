@@ -6,6 +6,9 @@
 <script>
 export default {
   name: 'head',
+  created(){
+    console.log(this)
+  }
 }
 </script>
 

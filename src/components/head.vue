@@ -2,7 +2,7 @@
   <header :class="{login: isLogin, 'no-login': !isLogin}">
   <template v-if="isLogin">
 <div class="head">
-    <router-link to="/" ><h2>这里是 <sub>夏风</sub> <sub >休闲blog</sub></h2></router-link> 
+   <div @click="createIs"><h2>这里是 <sub>夏风</sub> <sub >休闲blog</sub></h2></div>
     <div class="ctr-h">
       <router-link to="/create"><img src="../assets/create.png" alt="" class="bt-h"></router-link> 
     </div>
@@ -13,7 +13,7 @@
   </span>
   <el-dropdown-menu slot="dropdown"  >
     <el-dropdown-item command="a">注销</el-dropdown-item>
-    <el-dropdown-item command="my">我的blog</el-dropdown-item>
+    <el-dropdown-item command="my"> 我的blog</el-dropdown-item>
     <el-dropdown-item command="geren">个人设置</el-dropdown-item>
     
   </el-dropdown-menu>
@@ -50,6 +50,7 @@ export default {
 
     created() {
       this.checkLogin()
+       
     },
 
     methods: {
@@ -57,10 +58,27 @@ export default {
         'checkLogin',
         'logout'
         ]),
-
+        createIs(){
+          console.log(this.$route.path)
+         if(this.$route.path==='/create'){
+      this.$confirm('是否退出本次编辑？', {
+      
+        confirmButtonText: '确定',
+        cancelButtonText: '取消'
+      })
+        .then(()=>{
+          this.$message({
+            type:'success',
+            message:'欢迎回到夏风小站~'
+          })
+          this.$router.push({ path: `/`})
+        })
+         } 
+        },
+        
     
     handleCommand(command) {
-      console.log(command)
+      console.log(this)
      if(command==='a'){
          this.logout().then(()=>{this.$router.push({path: '/'})
     }
@@ -68,7 +86,8 @@ export default {
     
      }
         if(command==='my'){
-        this.$router.push({path: '/user'})
+      this.$router.push({path: `/my`})
+        
      }
      
        if(command==='geren'){

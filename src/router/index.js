@@ -32,7 +32,7 @@ const router= new Router({
       component: ()=>import('@/pages/register/register.vue')
     },
     {
-      path: '/edit',
+      path: '/edit:blogId',
       name: 'edit',
       component: ()=>import('@/pages/edit/edit.vue'),
       meta:{requiresAuth:true}
@@ -60,7 +60,7 @@ const router= new Router({
     },
     {
       path: '/user:userId',
-      name: 'create',
+      name: 'user',
       component: ()=>import('@/pages/user/user.vue'),//代码懒加载，在进入对应的页面在加载对应的代码
       meta:{requiresAuth:true}
     },

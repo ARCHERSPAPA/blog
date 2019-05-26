@@ -12,9 +12,10 @@ export default {
 
     onlogin() {
       this.login({username: this.username, password: this.password})
-        .then(()=>{
-          console.log(this)
+        .then(res=>{
+         
           this.$router.push({path: '/'})
+          console.log(res)
         })
     }
     

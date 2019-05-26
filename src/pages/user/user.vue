@@ -1,34 +1,35 @@
 <template>
-<div>
-    <h2>我的博客</h2> 
-     <div class="content" v-for="blog in blogs">
-      <figure class="user">
-        <img :src="blog.user.avatar" alt>
-        <p>
-          <a href>{{blog.user.username}}</a>
-        </p>
-      </figure>
-      <router-link :to="`/detail/${blog.id}`">
-        <div class="text">
-          <h3>
-            {{blog.title}}
-            <span>发表日期:{{friendlyDate(blog.createdAt)}}</span>
-          </h3>
-          <p>{{blog.description}}</p>
+  <div id="user">
+    <section class="user-info">
+      <img :src="user.avatar" :alt="user.username" class="avatar">
+      <h3>{{user.username}}</h3>
+    </section>
+    <section>
+      <router-link class="item" v-for="blog in blogs" :key="blog.id" :to="`/detail/${blog.id}`">
+        <div class="date">
+          <span class="day">{{splitDate(blog.createdAt).date}}</span>
+          <span class="month">{{splitDate(blog.createdAt).month}}月</span>
+          <span class="year">{{splitDate(blog.createdAt).year}}</span>
         </div>
+        <h3>{{blog.title}}</h3>
+        <p>{{blog.description}}</p>
       </router-link>
-    </div>
-<router-view/>
-
-</div>
-
-
+    </section>
+    <section class="pagination">
+      <el-pagination
+        layout="prev, pager, next"
+        :total="total"
+        :current-page="page"
+        @current-change="onPageChange">
+      </el-pagination>
+    </section>
+  </div>
 </template>
-<style src="./user.less" lang="less">
 
-</style>
 <script src="./user.js">
 
 </script>
 
+<style lang="less" src="./user.less">
 
+</style>

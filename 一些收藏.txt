@@ -1,0 +1,8 @@
+写插件
+export default {
+install(Vue,options){
+Vue.protype.methodname=methodname}
+}
+在main.js中import 
+vue.use()
+之后就可以直接在Vue的实例中直接使用

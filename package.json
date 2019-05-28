@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js",
-    "upload": " cd dist;  git add .; git commit -am \"xjy\"; git push  origin master;"
+    "build": "node build/build.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -16,6 +15,7 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "marked": "^0.6.2",
+    "requset": "0.0.1-security",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.1.1"

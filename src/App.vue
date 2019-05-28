@@ -53,7 +53,7 @@ Header{
   grid-area: header;
  
   padding-right: 10%;
-  background: url(https://i.loli.net/2019/05/22/5ce52b3dace5e92162.jpg);
+  background: url(https://i.loli.net/2019/05/27/5ceb634c0e18d34023.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 10px;
@@ -62,7 +62,7 @@ Header{
 }
 Main{
   grid-area: main;
-  background: rgba(246, 249, 250, 0.5)
+  background: rgba(106, 111, 112, 0.2)
 }
 .footer{
   grid-area: footer;

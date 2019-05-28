@@ -10,7 +10,7 @@
       </div>
       <div class="passw">
         <label for="password-l">
-          <img src="@/assets/pass.png" alt>
+          <img src="@/assets/pass.png" alt > 
         </label>
         <el-input
           placeholder="请输入密码"

@@ -1,5 +1,7 @@
-<template>
-  <div id="index">
+<template >
+
+  <div id="index" >
+    <template :v-if="isLogin">
     <!-- <div class="content">
     <router-link class="item" v-for="blog in blogs" :to="`/detail/${blog.id}`">
         <figure class="avatar">
@@ -12,7 +14,7 @@
   
     </div>-->
 
-    <div class="content" v-for="blog in blogs" :key="blog.id">
+    <div class="content" v-for="blog in blogs" :key="blog.id" >
       <figure class="user" id='nihao'>
         <img :src="blog.user.avatar" alt>
         <p>
@@ -37,6 +39,9 @@
       @current-change="onPageChange"
       style="float:right"
     ></el-pagination>
+    </template >
+     <template :v-if="isLogin">
+      </template >
   </div>
 </template>
 

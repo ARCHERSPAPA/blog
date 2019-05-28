@@ -1,13 +1,13 @@
 <template>
   <div class="footer">
-    <p>forever in love</p>
+    <p>Forever in love</p>
   </div>
 </template>
 <script>
 export default {
   name: 'head',
   created(){
-    console.log(this)
+   
   }
 }
 </script>
